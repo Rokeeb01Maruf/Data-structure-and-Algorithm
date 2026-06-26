@@ -40,5 +40,54 @@ def duplicated_value(value):
             double.append(letter)
         else:
             single.append(letter)
-    print(double)
+    return(double)
 check_duplications = duplicated_value([1,2,5,8,2,5,0,9,8])
+
+
+#Check for character frequency
+def character_frequency(values):
+    characters = {}
+    for value in values:
+        if value not in characters:
+            characters[value] = 1
+        else:
+            characters[value] += 1
+    return(characters)
+check_frequency =  character_frequency("banana")
+
+# Palindrome checker
+
+def check_palindrome(values):
+    for index, value in enumerate(values):
+        if value != values[len(values)-index-1]:
+            return(False)
+        else:
+            return(True)
+
+is_palindrome = check_palindrome("madam")
+
+#Sum of a list
+
+def sum_of_list(values):
+    sum = 0
+    for value in values:
+        sum += value
+    return sum
+
+check_sum = sum_of_list([2,4,6,8])
+
+#Remove duplicates
+
+def remove_duplicates(values):
+    newList = []
+    for value in values:
+        if value not in newList:
+            newList.append(value)
+    return newList
+
+unique = remove_duplicates([1,2,2,3,1,4])
+
+# find the second largest number
+
+def second_largest(values):
+    large_numbers = []
