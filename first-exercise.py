@@ -90,4 +90,17 @@ unique = remove_duplicates([1,2,2,3,1,4])
 # find the second largest number
 
 def second_largest(values):
-    large_numbers = []
+    re_arrange = []
+    for value in values:
+        if not re_arrange:
+            re_arrange.append(value)
+        else:
+            for index, data in enumerate(re_arrange):
+                if data > value:
+                    re_arrange.insert(index, value)
+                    break
+            else:
+                re_arrange.append(value)
+    return re_arrange[-2]
+
+second = second_largest([22, 24, 23, 26, 9])
