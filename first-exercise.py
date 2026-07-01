@@ -1,12 +1,11 @@
 # Finding the largest number
-def get_largest_number():
-    numbers = [5,2,9,1,7]
-    largest = 0
+def get_largest_number(numbers):
+    largest = numbers[0]
     for number in numbers:
-        if number-largest > 0:
+        if number > largest:
             largest = number
     return(largest)
-largest = get_largest_number()
+largest = get_largest_number([5, 2, 9, 1, 7])
 
 # Reversing a string
 
@@ -31,7 +30,6 @@ def count_vowels(string):
 vowel_count = count_vowels("Alleluyah")
 
 #Returning the duplicated values
-
 def duplicated_value(value):
     single = []
     double = []
@@ -60,14 +58,12 @@ check_frequency =  character_frequency("banana")
 def check_palindrome(values):
     for index, value in enumerate(values):
         if value != values[len(values)-index-1]:
-            return(False)
-        else:
-            return(True)
+            return False
+    return True
 
 is_palindrome = check_palindrome("madam")
 
 #Sum of a list
-
 def sum_of_list(values):
     sum = 0
     for value in values:
