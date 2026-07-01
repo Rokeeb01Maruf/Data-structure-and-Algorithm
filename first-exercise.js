@@ -1,17 +1,16 @@
 // Getting largest number
 function largestNumber(values){
-    let largest = 0
+    let largest = values[0]
     for (let i=0; i<values.length; i++){
-        if(largest-values[i] < 0){
+        if(largest < values[i]){
             largest = values[i]
         }
     }
     return largest
 }
-largest = largestNumber([2, 4, 5, 1, 8, 9, 6])
+largest = largestNumber([5, 2, 9, 1, 7])
 
 // Reversing a string
-
 function reverseString(value){
     let reversed = "";
     for (let i = value.length - 1; i > -1; i--){
@@ -39,7 +38,7 @@ function duplicatedValues(value){
     const single = []
     const duplicates = []
     for (let i=0; i<value.length; i++){
-        if(single.includes(value[i])){
+        if(single.includes(value[i]) && !duplicates.includes(value[i])){
             duplicates.push(value[i])
         }else{
             single.push(value[i])
@@ -47,7 +46,7 @@ function duplicatedValues(value){
     }
     return duplicates
 }
-duplicates = duplicatedValues([1,2,3,2,4,1])
+duplicates = duplicatedValues([1,1,1,1,1])
 
 // Frequency checker
 function characterFrequency(value){
@@ -65,16 +64,15 @@ frequency = characterFrequency("banana")
 
 // Palindrome checker
 function palindromeChecker(value){
-    let palindrome = true
-    for(let i=0; i < value.length; i++){
+    for(let i=0; i < Math.floor(value.length / 2); i++){
         if(value[i] !== value[value.length - 1 - i]){
-            palindrome = false
+            return false
         }
     }
-    return palindrome
+    return true
 }
 
-checkPalindrome = palindromeChecker("level")
+checkPalindrome = palindromeChecker("madam")
 
 // Sum of a lists
 function sum(value){
@@ -94,7 +92,7 @@ function removeDuplicates(value){
             cleaned.push(value[i])
         }
     }
-    console.log(cleaned)
+    return cleaned
 }
 
 removeDuplicates([1,2,2,3,1,4])
@@ -103,7 +101,7 @@ removeDuplicates([1,2,2,3,1,4])
 
 // Second largest number
 function secondLargest(values){
-    reArrange = []
+    let reArrange = []
     for (let i = 0; i < values.length; i++){
         if(reArrange.length < 1){
             reArrange.push(values[i])
